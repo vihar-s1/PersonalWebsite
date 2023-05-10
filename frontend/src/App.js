@@ -4,21 +4,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Introduction from "./components/Introduction";
+import AboutMe from "./components/AboutMe";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import ContactMe from "./components/ContactMe";
+import Certificates from "./components/Certificates";
 
 
 const App = () => {
-    useEffect(() => {
-        if (!localStorage.getItem("theme") || !localStorage.getItem("navbarBg"))
-        {
-            localStorage.setItem("theme", "dark");
-            localStorage.setItem("navbarBg", "#000000");
-        }
-    });
 
     return (
         <Router>
             <Navbar />
-            <Introduction />
+            <Routes>
+                <Route path="/" element={<Introduction />} />
+                <Route path="/aboutme" element={<AboutMe />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/contactme" element={<ContactMe />} />
+                <Route path="/certificates" element={<Certificates />} />
+            </Routes>
             <Footer />
         </Router>
     );
