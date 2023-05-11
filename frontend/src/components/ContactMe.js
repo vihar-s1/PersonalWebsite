@@ -88,11 +88,11 @@ const ContactMe = () => {
                     <div className="col-md-4">
                         <label htmlFor="type" className="form-label h5">Are You An:</label>
                         <div>
-                            <input type="radio" className="btn-check" name="type" id="individual" autoComplete="off" defaultChecked />
-                            <label className={`btn btn-outline-${theme == "dark" ? "light" : "dark"} mx-3`} htmlFor="individual">Individual</label>
-
-                            <input type="radio" className="btn-check" name="type" id="company" autoComplete="off" />
-                            <label className={`btn btn-outline-${theme == "dark" ? "light" : "dark"} mx-3`} htmlFor="company">Group</label>
+                            <select className='form-select'>
+                                <option value="Individual">Individual</option>
+                                <option value="Group">Group</option>
+                                <option value="Company">Company</option>
+                            </select>
                         </div>
                     </div>
                     <div className="col-md-8">
