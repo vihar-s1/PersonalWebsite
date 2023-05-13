@@ -1,0 +1,26 @@
+[
+    {
+        "field": "Mail",
+        "value": "vihar2121@gmail.com",
+        "url": "mailto:vihar2121@gmail.com",
+        "network": "email"
+    },
+    {
+        "field": "Github",
+        "value": "vihar-s1",
+        "url": "https://github.com/vihar-s1",
+        "network": "github"
+    },
+    {
+        "field": "Linked-In",
+        "value": "Vihar Shah",
+        "url": "https://wa.me/9377402438?text=Hi!%20I%20am%20",
+        "network": "linkedin"
+    },
+    {
+        "field": "WhatsApp",
+        "value": "+91 9377402438",
+        "url": "https://www.linkedin.com/in/vihar-shah-263685230/",
+        "network": "whatsapp"
+    }
+]
