@@ -11,61 +11,7 @@ const Navbar = () => {
         useContext(themeContext);
 
     return (
-        // <div className={`shadow-lg navbar-${theme}`} style={{backgroundColor: background, fontFamily: "lobster", height: "100%"}}>
-        //     <button
-        //         className="btn btn-primary d-sm-none"
-        //         type="button"
-        //         data-bs-toggle="offcanvas"
-        //         data-bs-target="#offCanvasNavbar"
-        //         aria-controls="offCanvasNavbar"
-        //     >
-        //         <i className="bi bi-list"></i>
-        //     </button>
-
-        //     <div
-        //         className={`offcanvas-sm offcanvas-start ${theme == "dark" ? "text-bg-dark" : ""}`}
-        //         tabIndex="-1"
-        //         id="offCanvasNavbar"
-        //         aria-labelledby="offCanvasNavbarLabel"
-		// 		style={{background: background}}
-        //     >
-        //         <div className={`offcanvas-header text-${textTheme}`}>
-        //             <h5 className="offcanvas-title d-flex flex-wrap align-items-center" id="offCanvasNavbarLabel">
-		// 				<img className="navbar-brand mx-1" src="logo.png" alt="Vihar Shah" width={LOGO_DIMENSIONS} height={LOGO_DIMENSIONS}/>
-        //                 <div className="mx-1">Vihar Shah</div>
-        //             </h5>
-        //             <button
-        //                 type="button"
-        //                 className="btn-close"
-        //                 data-bs-dismiss="offcanvas"
-        //                 data-bs-target="#offCanvasNavbar"
-        //                 aria-label="Close"
-        //             ></button>
-        //         </div>
-        //         <div className={`offcanvas-body text-${textTheme}`}>
-		// 			<div className="container-fluid">
-
-		// 				<div className="" id="navbarLinks">
-		// 					<nav className="navbar-nav me-auto mb-2 mb-sm-0">
-		// 						<Link className={`nav-link ${location.pathname == "/" ? "active" : "" }`} to="/">Home</Link>
-		// 						<Link className={`nav-link ${location.pathname == "/aboutme" ? "active" : "" }`} to="/aboutme">About Me</Link>
-		// 						<Link className={`nav-link ${location.pathname == "/projects" ? "active" : "" }`} to="/projects">Projects</Link>
-		// 						<Link className={`nav-link ${location.pathname == "/education" ? "active" : "" }`} to="/education">Education</Link>
-		// 						<Link className={`nav-link ${location.pathname == "/contactme" ? "active" : "" }`} to="/contactme">Contact Me</Link>
-		// 						<Link className={`nav-link ${location.pathname == "/certificates" ? "active" : "" }`} to="/certificates">Certificates</Link>
-
-		// 					</nav>
-		// 				</div>
-		// 				{
-		// 					theme == "dark" ?
-		// 					<button className='btn btn-outline-light bi bi-brightness-high-fill shadow-lg' onClick={toggleTheme} /> :
-		// 					<button className="btn btn-outline-dark bi bi-moon-stars-fill shadow-lg" onClick={toggleTheme} />
-		// 				}
-		// 			</div>
-        //         </div>
-        //     </div>
-        // </div>
-        <nav className={`navbar navbar-expand-sm navbar-${theme}`} aria-label="Offcanvas navbar large" style={{background: background}}>
+        <nav className={`navbar shadow-lg navbar-expand-sm navbar-${theme}`} aria-label="Offcanvas navbar large" style={{background: background}}>
             <div className="container-fluid">
                 <a className="navbar-brand d-flex align-items-center" href="/">
                     <img className="navbar-brand mx-2" src="logo.png" alt="Vihar Shah" width={LOGO_DIMENSIONS} height={LOGO_DIMENSIONS}/>

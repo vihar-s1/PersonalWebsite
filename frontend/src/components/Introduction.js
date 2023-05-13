@@ -1,15 +1,17 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
 
 const Introduction = () => {
     const name = "Vihar Shah";
-    const role = "Developer"
-    // const location = useLocation();
+    const role = "Developer";
     return (
-        <div style={{background: "url(wallpaper1.jpeg) no-repeat center center/cover"}}>
-            <div className='container text-left p-4 text-light' style={{fontFamily: "Satisfy"}}>
-                <h1>Hi! My name is {name}.</h1>
-                <h1>I am a {role}.</h1>
+        <div style={{background: "url(introduction.jpeg) no-repeat center center/cover"}}>
+            <div className="container py-5" style={{fontFamily: "satisfy", color: "rgb(255, 255, 0)"}}>
+                <div className="p-5 text-center rounded-3">
+                    <p className="fw-bold fs-1">I am Vihar Shah</p>
+                    <p className="col-lg-8 mx-auto fs-3 fw-bold">
+                        Welcome to my website. See my projects, certificates, and resume, or just contact me through the contact me form!
+                    </p>
+                </div>
             </div>
         </div>
     )

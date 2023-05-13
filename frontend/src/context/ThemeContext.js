@@ -10,8 +10,8 @@ const ThemeContextProvider = (props) => {
 	const [textTheme, setTextTheme] = useState(theme == "light" ? "dark": "light")
 	const [background, setBackground] = useState(theme == "light" ? BACKGROUND : "#000000");
 	
-	const toggleTheme = () => {
-		if (theme == "dark"){
+	const updateTheme = (targetTheme) => {
+		if (targetTheme == "light"){
 			localStorage.setItem("theme", "light");
 			setTheme("light");
 			setTextTheme("dark");
@@ -26,7 +26,7 @@ const ThemeContextProvider = (props) => {
 	}
 
     return (
-        <themeContext.Provider value={{ theme, textTheme, background, toggleTheme }}>
+        <themeContext.Provider value={{ theme, textTheme, background, updateTheme }}>
             {props.children}
         </themeContext.Provider>
     );

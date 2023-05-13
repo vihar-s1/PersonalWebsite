@@ -34,7 +34,7 @@ const ContactMe = () => {
             <div className="col-md-5 p-4 m-3 shadow-lg">
                 <h1>My Contact Details</h1>
                 <ul className="list-group m-3" >   
-                    <div className={`list-group-item d-flex flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
+                    <div className={`list-group-item d-flex shadow-sm flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
                         <SocialIcon className='m-2 rounded-circle shadow-lg bg-light' style={{width: ICON_DIM, height: ICON_DIM}} url={process.env.REACT_APP_MAIL_LINK}/>
                         <div>
                             <div className="h4">Mail:</div>
@@ -42,7 +42,7 @@ const ContactMe = () => {
                         </div>
                     </div>
 
-                    <div className={`list-group-item d-flex flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
+                    <div className={`list-group-item d-flex shadow-sm flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
                         <SocialIcon className='m-2 rounded-circle shadow-lg bg-light' style={{width: ICON_DIM, height: ICON_DIM}} url={process.env.REACT_APP_GITHUB_LINK}/>
                         <div>
                             <div className="h4">GitHub:</div>
@@ -50,7 +50,7 @@ const ContactMe = () => {
                         </div>
                     </div>
 
-                    <div className={`list-group-item d-flex flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
+                    <div className={`list-group-item d-flex shadow-sm flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
                         <SocialIcon className='m-2 rounded-circle shadow-lg bg-light' style={{width: ICON_DIM, height: ICON_DIM}} url={process.env.REACT_APP_LINKEDIN_LINK}/>
                         <div>
                             <div className="h4">Linked-In:</div>
@@ -58,7 +58,7 @@ const ContactMe = () => {
                         </div>
                     </div>
 
-                    <div className={`list-group-item d-flex flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
+                    <div className={`list-group-item d-flex shadow-sm flex-wrap align-items-center bg-${theme} text-${textTheme}`}>
                         <SocialIcon className='m-2 rounded-circle shadow-lg bg-light' style={{width: ICON_DIM, height: ICON_DIM}} url={process.env.REACT_APP_WHATSAPP_LINK} network="whatsapp"/>
                         <div>
                             <div className="h4">WhatsApp:</div>
@@ -73,22 +73,22 @@ const ContactMe = () => {
                 <form className={`row g-3 needs-validation text-${textTheme}`} noValidate onSubmit={handleSubmit}>
                     <div className="col-md-7">
                         <label htmlFor="firstName" className="form-label h5">Your Name</label>
-                        <input type="text" className={`form-control bg-${theme} text-${textTheme}`} id="firstName" required />
+                        <input type="text" className={`shadow-2 form-control bg-${theme} text-${textTheme}`} id="firstName" required />
                         <div className="invalid-feedback">
                             Please enter your Name!
                         </div>
                     </div>
                     <div className="col-md-5">
                         <label htmlFor="email" className="form-label h4">Email</label>
-                        <input type="email" className={`form-control bg-${theme} text-${textTheme}`} id="email" required />
+                        <input type="email" className={`shadow-2 form-control bg-${theme} text-${textTheme}`} id="email" autoComplete='yes' required />
                         <div className="invalid-feedback">
                             Please enter valid Email!
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="type" className="form-label h5">Are You An:</label>
+                        <label htmlFor="groupType" className="form-label h5">Are You An:</label>
                         <div>
-                            <select className='form-select'>
+                            <select id="groupType" className={`shadow-2 form-select bg-${theme} text-${textTheme}`}>
                                 <option value="Individual">Individual</option>
                                 <option value="Group">Group</option>
                                 <option value="Company">Company</option>
@@ -97,20 +97,20 @@ const ContactMe = () => {
                     </div>
                     <div className="col-md-8">
                         <label htmlFor="subject" className="form-label h5">Subject</label>
-                        <input type="text" className={`form-control bg-${theme} text-${textTheme}`} id="subject" required />
+                        <input type="text" className={`shadow-2 form-control bg-${theme} text-${textTheme}`} id="subject" required />
                         <div className="invalid-feedback">
                             Enter the Reason to Contact Here.
                         </div>
                     </div>
                     <div className="col-md-12">
                         <label htmlFor="message" className="form-label h5">Message</label>
-                        <textarea id="message" className={`form-control bg-${theme} text-${textTheme}`} rows="5" required/>
+                        <textarea id="message" className={`shadow-2 form-control bg-${theme} text-${textTheme}`} rows="5" required/>
                         <div className="invalid-feedback">
                             Describe the Reason to Contact Here.
                         </div>
                     </div>
                     <div className="col-12 text-center">
-                        <button className={`btn btn-${theme == "dark" ? "light" : "dark"}`} type="submit"><div className="h5">Send Message</div></button>
+                        <button className={`btn btn-outline-${theme == "dark" ? "info" : "primary"} shadow-5-strong`} type="submit"><h5>Send the Message</h5></button>
                     </div>
                 </form>
             </div>
