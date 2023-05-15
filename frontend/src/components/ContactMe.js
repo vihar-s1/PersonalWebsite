@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SocialIcon } from "react-social-icons";
-import { themeContext } from '../context/ThemeContext';
 
 import SocialDetails from "../json/SocialDetails.json";
 
 const ICON_DIM="30px";
 const TEXT_THEME = "text-dark";
-const INPUT_CLASS = "bg-light bg-opacity-50 shadow-lg";
+const INPUT_CLASS = "bg-dark bg-opacity-25 shadow-lg";
 
 
 const ContactMe = () => {
@@ -29,9 +28,16 @@ const ContactMe = () => {
         })
     })
 
+    const [mailData, setMailData] = useState({ name:"", email:"", groupType: "Individual", subject:"", message:"" })
+
+    const onChangeHandler = (event) => {
+        setMailData({...mailData, [event.target.id]: event.target.value});
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         alert("Message Sent !");
+        setMailData({ name:"", email:"", groupType: "Individual", subject:"", message:"" })
     }
 
     return (    
@@ -47,7 +53,7 @@ const ContactMe = () => {
                         SocialDetails.map((socialLink, index) => {
                             return (
                                 <div key={index} 
-                                    className={`list-group-item d-flex  shadow-lg flex-wrap align-items-center bg-light bg-opacity-25 ${TEXT_THEME}`}
+                                    className="list-group-item d-flex shadow-lg flex-wrap align-items-center bg-light bg-opacity-25"
                                 >
                                     <SocialIcon 
                                         className='m-2 rounded-circle shadow-lg bg-light' 
@@ -68,45 +74,88 @@ const ContactMe = () => {
 
             <div className='col-md-6 p-4 m-3 bg-light bg-opacity-10 shadow-lg' >
                 <h1>Send Me a Message !</h1>
-                <form className={`row g-3 needs-validation ${TEXT_THEME}`} noValidate onSubmit={handleSubmit}>
+                <form id="contactMeForm" className={`row g-3 needs-validation ${TEXT_THEME}`} noValidate onSubmit={handleSubmit}>
                     <div className="col-md-7 pb-3">
-                        <label htmlFor="firstName" className="form-label h5">Your Name</label>
-                        <input type="text" className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`} id="firstName" required/>
+                        <label htmlFor="name" className="form-label h5">Your Name</label>
+                        <input 
+                            type="text" 
+                            className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`}
+                            id="name"
+                            value={mailData.name}
+                            onChange={onChangeHandler}
+                            required 
+                            minLength={3}
+                        />
                         <div className="invalid-feedback" style={{width: "fit-content"}}>
-                            Please enter your Name!
+                            Please enter your Name of minimum length 3!
                         </div>
                     </div>
+
                     <div className="col-md-5 pb-3">
                         <label htmlFor="email" className="form-label h5">Email</label>
-                        <input type="email" className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`} id="email" autoComplete='yes' required/>
+                        <input 
+                            type="email" 
+                            className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`} 
+                            id="email" 
+                            value={mailData.email}
+                            onChange={onChangeHandler}
+                            autoComplete='yes'
+                            required minLength={5}
+                        />
                         <div className="invalid-feedback"  style={{width: "fit-content"}}>
-                            Please enter valid Email!
+                            Please enter valid Email of minimum length 5!
                         </div>
                     </div>
+
                     <div className="col-md-4 pb-3">
                         <label htmlFor="groupType" className="form-label h5">Are You A/An:</label>
                         <div>
-                            <select id="groupType" className={`form-select ${INPUT_CLASS} ${TEXT_THEME}`}>
-                                <option value="Individual">Individual</option>
+                            <select className={`form-select ${INPUT_CLASS} ${TEXT_THEME}`} 
+                                id="groupType"
+                                value={mailData.groupType}
+                                onChange={onChangeHandler}
+                            >
+                                <option value="Individual" defaultChecked>Individual</option>
                                 <option value="Group">Group</option>
                                 <option value="Company">Company</option>
                             </select>
                         </div>
                     </div>
+
                     <div className="col-md-8 pb-3">
                         <label htmlFor="subject" className="form-label h5">Subject</label>
-                        <input type="text" className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`} id="subject" required/>
+                        <input 
+                            type="text"
+                            className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`}
+                            id="subject"
+                            value={mailData.subject}
+                            onChange={onChangeHandler}
+                            required
+                            minLength={5}
+                            maxLength={50}
+                        />
                         <div className="invalid-feedback" style={{width: "fit-content"}}>
-                            Enter the Reason to Contact Here.
+                            Enter the Reason to Contact in 5 to 50 characters.
                         </div>
                     </div>
+
                     <div className="col-md-12 pb-3">
                         <label htmlFor="message" className="form-label h5">Message</label>
-                        <textarea id="message" className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`} rows="5" required/>
+                        <textarea 
+                            className={`form-control ${INPUT_CLASS} ${TEXT_THEME}`}
+                            id="message"
+                            value={mailData.message}
+                            onChange={onChangeHandler}
+                            rows="5"
+                            required
+                            minLength={5}
+                            maxLength={500}
+                        />
                         <div className="invalid-feedback" style={{width: "fit-content"}}>
-                            Describe the Reason to Contact Here.
+                            Describe the Reason to Contact in 5 to 500 characters.
                         </div>
                     </div>
+
                     <div className="col-12 pb-3 text-center">
                         <button className="btn btn-light bg-light bg-opacity-75 shadow-lg" type="submit"><h5>Send the Message</h5></button>
                     </div>

@@ -1,0 +1,137 @@
+[
+    {
+        "title": "pysh",
+        "brief": "Contribution to open-source cross-platform shell in python",
+        "link": "https://github.com/smv1999/pysh",
+        "tools": [
+            "python", "bash"
+        ],
+        "description": [
+            "PYSH is a cross-platform shell written in python language. The project is an open source project on github.",
+            "I contributed 3 commands for shell, namely, 'chmod', 'tree', and 'link'.",
+            "'chmod' command is used for changing access permission and the special mode flags of the file or directory. Optional '-c' flag is used to change permissions of directory contents along with the directory itself. Optional '-C' flag recursively changes permissions of contents of directory and its subdirectories as well.",
+            "'tree' command takes an optional parameter which is a directory path. It lists the contents of the directory and its sub-directories in a tree like format. The default directory is the current directory.",
+            "'link' command is used to form a hardlink or a softlink for a given file/directory. The '-h' flag indicates hardlink formation and '-s' flag indicates softlink formation."
+        ]
+    },
+    {
+        "title": "python image editor",
+        "brief": "A python-based graphical image editor",
+        "link": "https://github.com/vihar-s1/Python-Image-Editor",
+        "tools": [
+            "Pillow", "tkinter", "py-to-exe"
+        ],
+        "description": [
+            "A simple image editor made using tkinter and pillow library of python.",
+            "The GUI is designed using the tkinter library of python. It contains of a main window of the application. The main window has a left side bar to show all the possible filters, center screen to display image, and right sidebar to show options under the selected feature.",
+            "The filters available are channel splitting (RGB), resizing, cropping, rotating, invert image, black-and-white filter, edge detection, edge enhancement, pencil sketch effect, slider-based thresholding, slider-based erosion, slider-based dilation, and adjusting blur, sharpness, brightness, saturation, and contrast",
+            "The program is converted to all including .exe using 'py-to-exe' python module to get an easy to use executable that does not require any additional software or modules to run it. The executable can run without installing python as well."
+        ]
+    },
+    {
+        "title": "NaiveBaker",
+        "brief": "A group project blogging platform to share recipes among budding fellow chefs",
+        "link": "https://github.com/vihar-202001110/IT314_project_grp08",
+        "tools": [
+            "Node.JS", "React", "bootstrap", "MongoDB"
+        ],
+        "description": [
+            "A software engineering group project in MERN stack where I played role of Group Leader.",
+            "The project is a simple responsive website where user can login, search recipes, see recipes in detail, and upload recipes after upgrading to premium",
+            "My contribution to the project as a the group leader was mainly in backend. I also worked on connecting frontend and backend, making website responsive, and fixing frontend-backend bugs.",
+            "I also worked backend-testing, keeping track of the work being done on the project by every team member, and resolving the merge-conflicts of teams' commits on github",
+            "However, there are still some features and functionalities still not-implemented like deleting user profile, searching recipes of a particular user, viewing user profile, following a user, rating recipes, upgrade to premium user, premium user regular user differentiation, and more."
+        ],
+        "liveLink": "https://naivebaker.onrender.com"
+    },
+    {
+        "title": "pysh",
+        "brief": "Contribution to open-source cross-platform shell in python",
+        "link": "https://github.com/smv1999/pysh",
+        "tools": [
+            "python", "bash"
+        ],
+        "description": [
+            "PYSH is a cross-platform shell written in python language. The project is an open source project on github.",
+            "I contributed 3 commands for shell, namely, 'chmod', 'tree', and 'link'.",
+            "'chmod' command is used for changing access permission and the special mode flags of the file or directory. Optional '-c' flag is used to change permissions of directory contents along with the directory itself. Optional '-C' flag recursively changes permissions of contents of directory and its subdirectories as well.",
+            "'tree' command takes an optional parameter which is a directory path. It lists the contents of the directory and its sub-directories in a tree like format. The default directory is the current directory.",
+            "'link' command is used to form a hardlink or a softlink for a given file/directory. The '-h' flag indicates hardlink formation and '-s' flag indicates softlink formation."
+        ]
+    },
+    {
+        "title": "python image editor",
+        "brief": "A python-based graphical image editor",
+        "link": "https://github.com/vihar-s1/Python-Image-Editor",
+        "tools": [
+            "Pillow", "tkinter", "py-to-exe"
+        ],
+        "description": [
+            "A simple image editor made using tkinter and pillow library of python.",
+            "The GUI is designed using the tkinter library of python. It contains of a main window of the application. The main window has a left side bar to show all the possible filters, center screen to display image, and right sidebar to show options under the selected feature.",
+            "The filters available are channel splitting (RGB), resizing, cropping, rotating, invert image, black-and-white filter, edge detection, edge enhancement, pencil sketch effect, slider-based thresholding, slider-based erosion, slider-based dilation, and adjusting blur, sharpness, brightness, saturation, and contrast",
+            "The program is converted to all including .exe using 'py-to-exe' python module to get an easy to use executable that does not require any additional software or modules to run it. The executable can run without installing python as well."
+        ]
+    },
+    {
+        "title": "NaiveBaker",
+        "brief": "A group project blogging platform to share recipes among budding fellow chefs",
+        "link": "https://github.com/vihar-202001110/IT314_project_grp08",
+        "tools": [
+            "Node.JS", "React", "bootstrap", "MongoDB"
+        ],
+        "description": [
+            "A software engineering group project in MERN stack where I played role of Group Leader.",
+            "The project is a simple responsive website where user can login, search recipes, see recipes in detail, and upload recipes after upgrading to premium",
+            "My contribution to the project as a the group leader was mainly in backend. I also worked on connecting frontend and backend, making website responsive, and fixing frontend-backend bugs.",
+            "I also worked backend-testing, keeping track of the work being done on the project by every team member, and resolving the merge-conflicts of teams' commits on github",
+            "However, there are still some features and functionalities still not-implemented like deleting user profile, searching recipes of a particular user, viewing user profile, following a user, rating recipes, upgrade to premium user, premium user regular user differentiation, and more."
+        ],
+        "liveLink": "https://naivebaker.onrender.com"
+    },
+    {
+        "title": "pysh",
+        "brief": "Contribution to open-source cross-platform shell in python",
+        "link": "https://github.com/smv1999/pysh",
+        "tools": [
+            "python", "bash"
+        ],
+        "description": [
+            "PYSH is a cross-platform shell written in python language. The project is an open source project on github.",
+            "I contributed 3 commands for shell, namely, 'chmod', 'tree', and 'link'.",
+            "'chmod' command is used for changing access permission and the special mode flags of the file or directory. Optional '-c' flag is used to change permissions of directory contents along with the directory itself. Optional '-C' flag recursively changes permissions of contents of directory and its subdirectories as well.",
+            "'tree' command takes an optional parameter which is a directory path. It lists the contents of the directory and its sub-directories in a tree like format. The default directory is the current directory.",
+            "'link' command is used to form a hardlink or a softlink for a given file/directory. The '-h' flag indicates hardlink formation and '-s' flag indicates softlink formation."
+        ]
+    },
+    {
+        "title": "python image editor",
+        "brief": "A python-based graphical image editor",
+        "link": "https://github.com/vihar-s1/Python-Image-Editor",
+        "tools": [
+            "Pillow", "tkinter", "py-to-exe"
+        ],
+        "description": [
+            "A simple image editor made using tkinter and pillow library of python.",
+            "The GUI is designed using the tkinter library of python. It contains of a main window of the application. The main window has a left side bar to show all the possible filters, center screen to display image, and right sidebar to show options under the selected feature.",
+            "The filters available are channel splitting (RGB), resizing, cropping, rotating, invert image, black-and-white filter, edge detection, edge enhancement, pencil sketch effect, slider-based thresholding, slider-based erosion, slider-based dilation, and adjusting blur, sharpness, brightness, saturation, and contrast",
+            "The program is converted to all including .exe using 'py-to-exe' python module to get an easy to use executable that does not require any additional software or modules to run it. The executable can run without installing python as well."
+        ]
+    },
+    {
+        "title": "NaiveBaker",
+        "brief": "A group project blogging platform to share recipes among budding fellow chefs",
+        "link": "https://github.com/vihar-202001110/IT314_project_grp08",
+        "tools": [
+            "Node.JS", "React", "bootstrap", "MongoDB"
+        ],
+        "description": [
+            "A software engineering group project in MERN stack where I played role of Group Leader.",
+            "The project is a simple responsive website where user can login, search recipes, see recipes in detail, and upload recipes after upgrading to premium",
+            "My contribution to the project as a the group leader was mainly in backend. I also worked on connecting frontend and backend, making website responsive, and fixing frontend-backend bugs.",
+            "I also worked backend-testing, keeping track of the work being done on the project by every team member, and resolving the merge-conflicts of teams' commits on github",
+            "However, there are still some features and functionalities still not-implemented like deleting user profile, searching recipes of a particular user, viewing user profile, following a user, rating recipes, upgrade to premium user, premium user regular user differentiation, and more."
+        ],
+        "liveLink": "https://naivebaker.onrender.com"
+    }
+]

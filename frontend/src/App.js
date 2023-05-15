@@ -11,6 +11,7 @@ import ContactMe from "./components/ContactMe";
 import Certificates from "./components/Certificates";
 import ToggleTheme from "./components/ToggleTheme";
 
+import "./App.css";
 
 const App = () => {
 
