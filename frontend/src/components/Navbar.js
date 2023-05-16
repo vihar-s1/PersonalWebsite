@@ -7,8 +7,7 @@ const LOGO_DIMENSIONS = "40px";
 const Navbar = () => {
     const location = useLocation();
 
-    const { theme, background, textTheme, toggleTheme } =
-        useContext(themeContext);
+    const { theme, background, textTheme } = useContext(themeContext);
 
     return (
         <nav className={`navbar shadow-lg navbar-expand-sm navbar-${theme}`} aria-label="Offcanvas navbar large" style={{background: background}}>

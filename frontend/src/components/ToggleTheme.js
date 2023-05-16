@@ -32,8 +32,8 @@ const ToggleTheme = () => {
 		<div className="position-fixed bottom-0 end-0 m-3">
 			{
 				theme == "dark" ?
-				<button className="btn btn-light opacity-75" onClick={() => { updateTheme("light") }}><i className="bi bi-brightness-high-fill"></i></button> : 
-				<button className="btn btn-dark opacity-75" onClick={() => { updateTheme("dark") }}><i className="bi bi-moon-stars-fill"></i></button>
+				<button className="btn btn-light opacity-50" onClick={() => { updateTheme("light") }}><i className="bi bi-brightness-high-fill"></i></button> : 
+				<button className="btn btn-dark opacity-50" onClick={() => { updateTheme("dark") }}><i className="bi bi-moon-stars-fill"></i></button>
 			}
 		</div>
     )

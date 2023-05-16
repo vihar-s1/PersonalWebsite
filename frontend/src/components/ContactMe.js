@@ -86,7 +86,7 @@ const ContactMe = () => {
                             required 
                             minLength={3}
                         />
-                        <div className="invalid-feedback" style={{width: "fit-content"}}>
+                        <div className="text-end invalid-feedback" style={{width: "100%"}}>
                             Please enter your Name of minimum length 3!
                         </div>
                     </div>
@@ -102,7 +102,7 @@ const ContactMe = () => {
                             autoComplete='yes'
                             required minLength={5}
                         />
-                        <div className="invalid-feedback"  style={{width: "fit-content"}}>
+                        <div className="text-end invalid-feedback"  style={{width: "100%"}}>
                             Please enter valid Email of minimum length 5!
                         </div>
                     </div>
@@ -134,7 +134,7 @@ const ContactMe = () => {
                             minLength={5}
                             maxLength={50}
                         />
-                        <div className="invalid-feedback" style={{width: "fit-content"}}>
+                        <div className="text-end invalid-feedback" style={{width: "100%"}}>
                             Enter the Reason to Contact in 5 to 50 characters.
                         </div>
                     </div>
@@ -151,7 +151,7 @@ const ContactMe = () => {
                             minLength={5}
                             maxLength={500}
                         />
-                        <div className="invalid-feedback" style={{width: "fit-content"}}>
+                        <div className="text-end invalid-feedback" style={{width: "100%"}}>
                             Describe the Reason to Contact in 5 to 500 characters.
                         </div>
                     </div>
