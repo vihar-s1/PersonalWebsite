@@ -1,0 +1,23 @@
+[
+    {
+        "title": "B.Tech Information and Communication Technology",
+        "score": 7.65,
+        "total": 10,
+        "passingYear": 2024,
+        "institute": "DAIICT"
+    },
+    {
+        "title": "Higher Secondary Certificate",
+        "score": 82.92,
+        "total": 100,
+        "passingYear": 2020,
+        "institute": "Nirman Higher Secondary School"
+    },
+    {
+        "title": "Secondary School Certificate",
+        "score": 87.83,
+        "total": 100,
+        "passingYear": 2018,
+        "institute": "Nirman Higher Secondary School"
+    }
+]
