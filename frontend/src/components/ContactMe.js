@@ -43,7 +43,7 @@ const ContactMe = () => {
     return (    
         <div 
             className={`d-flex justify-content-center flex-wrap ${TEXT_THEME}`} 
-            style={{background: "url(contactme.webp) no-repeat center center/cover", fontFamily: "kalam"}}
+            style={{background: "url(contactme.jpg) no-repeat center center/cover", fontFamily: "kalam"}}
         >
             
             <div className="col-md-5 p-4 m-3 bg-light bg-opacity-10 shadow-lg">
@@ -86,7 +86,7 @@ const ContactMe = () => {
                             required 
                             minLength={3}
                         />
-                        <div className="text-end invalid-feedback" style={{width: "100%"}}>
+                        <div className="invalid-feedback" style={{width: "100%"}}>
                             Please enter your Name of minimum length 3!
                         </div>
                     </div>
@@ -102,7 +102,7 @@ const ContactMe = () => {
                             autoComplete='yes'
                             required minLength={5}
                         />
-                        <div className="text-end invalid-feedback"  style={{width: "100%"}}>
+                        <div className="invalid-feedback"  style={{width: "100%"}}>
                             Please enter valid Email of minimum length 5!
                         </div>
                     </div>
@@ -134,7 +134,7 @@ const ContactMe = () => {
                             minLength={5}
                             maxLength={50}
                         />
-                        <div className="text-end invalid-feedback" style={{width: "100%"}}>
+                        <div className="invalid-feedback" style={{width: "100%"}}>
                             Enter the Reason to Contact in 5 to 50 characters.
                         </div>
                     </div>
@@ -151,13 +151,13 @@ const ContactMe = () => {
                             minLength={5}
                             maxLength={500}
                         />
-                        <div className="text-end invalid-feedback" style={{width: "100%"}}>
+                        <div className="invalid-feedback" style={{width: "100%"}}>
                             Describe the Reason to Contact in 5 to 500 characters.
                         </div>
                     </div>
 
                     <div className="col-12 pb-3 text-center">
-                        <button className="btn btn-light bg-light bg-opacity-75 shadow-lg" type="submit"><h5>Send the Message</h5></button>
+                        <button className="btn btn-light bg-light bg-opacity-50 shadow-lg" type="submit"><h5>Send the Message</h5></button>
                     </div>
                 </form>
             </div>
