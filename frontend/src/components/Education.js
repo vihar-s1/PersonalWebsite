@@ -5,7 +5,7 @@ import EducationDetails from "../json/EducationDetails.json"
 
 const DegreeCard = ({ degree }) => {
     return (
-        <div className="card m-3 bg-info bg-opacity-25">
+        <div className="card m-3 bg-primary bg-opacity-25">
             <div className="card-body d-flex justify-content-between">
                 <div>
                     <h4>{degree.title}</h4>
@@ -26,7 +26,9 @@ const Education = () => {
     const { theme, textTheme } = useContext(themeContext);
 
     return (
-        <div className={`text-${textTheme} text-bg-${theme}`} style={{fontFamily: "kalam"}}>
+        <div className={`text-${textTheme} text-bg-${theme}`} 
+            style={{fontFamily: "kalam", background: "url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg') center center/cover"}}
+        >
             <h1 className="text-center">My Educational Journey</h1>
             <div className="py-3">
                 {

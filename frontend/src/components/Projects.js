@@ -16,7 +16,7 @@ const ProjectCard = ({ project, cardIndex, viewDetailsButton }) => {
     return (
         <div
             className="card projectCard col-md-3 mx-1 my-3"
-            style={{backgroundImage: "url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg')", minHeight: "230px"}}
+            style={{background: "url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg') center center/cover", minHeight: "230px"}}
         >
             <div className="card-body text-light">
                 <div className="card-title fs-4">{capitalize(project.title)}</div>
@@ -73,7 +73,7 @@ const Projects = () => {
 
             {/* Modal */}
             <div className="modal fade" id="ProjectDetails" tabIndex="-1" aria-labelledby="ProjectDetailsLabel" aria-hidden="true"
-                style={{fontFamily: "cursive"}}
+                style={{fontFamily: "kalam"}}
             >
                 <div className="modal-dialog modal-xl">
                     <div className={`modal-content text-${textTheme} bg-${theme}`}>
