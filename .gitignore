@@ -1,3 +1,8 @@
+# Common Files/Folders to Ignore
 node_modules
 build
 .env
+
+# SanityIO Specific Files to Ignore
+*.log
+*.sanity
