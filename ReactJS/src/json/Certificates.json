@@ -1,0 +1,37 @@
+[
+    {
+        "name": "B.Tech ICT Degree",
+        "link": "",
+        "year": 2024,
+        "description": "Bachelors degree in Information and Communication Technology. Still Pending",
+        "location": "DAIICT"
+    },
+    {
+        "name": "SLOP Certificate",
+        "link": "/certificates/SLOP Certificate.pdf",
+        "year": 2022,
+        "description": "Semester LOng Project organised by Google Developers Students Club (GDSC) of DAIICT for Open source project contributions. Got 1st Rank in the competition",
+        "location": "GDSC club, DAIICT"
+    },
+    {
+        "name": "IT Automation with Python Specialization",
+        "link": "/certificates/Coursera IT Automation with Python Specialization Certificate.pdf",
+        "year": 2022,
+        "description": "Specilization course in introduction to automating tasks using python. Involved setting up cron jobs for system checks, mailing reports in case problem, crash course on github, and more",
+        "location": "Coursera"
+    },
+    {
+        "name": "HSC Result",
+        "link": "/certificates/12th Result.pdf",
+        "year": 2020,
+        "description": "12th Boards Result. Passed from Gujarat Start Education Board (GSEB).",
+        "location": "Gujarat, India"
+    },
+    {
+        "name": "SSC Result",
+        "link": "/certificates/10th Result.pdf",
+        "year": 2018,
+        "description": "10th Boards Result. Passed from Gujarat State Education Board (GSEB).",
+        "location": "Gujarat, India"
+    }
+]

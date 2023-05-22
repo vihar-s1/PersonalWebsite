@@ -16,7 +16,7 @@ const ProjectCard = ({ project, cardIndex, viewDetailsButton }) => {
     return (
         <div
             className="card projectCard col-md-3 mx-1 my-3"
-            style={{background: "url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg') center center/cover", minHeight: "230px"}}
+            style={{background: "url(/images/ocean.jpg)", minHeight: "230px"}}
         >
             <div className="card-body text-light">
                 <div className="card-title fs-4">{capitalize(project.title)}</div>

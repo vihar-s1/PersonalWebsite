@@ -4,20 +4,23 @@
         "score": 7.65,
         "total": 10,
         "passingYear": 2024,
-        "institute": "DAIICT"
+        "institute": "DAIICT",
+        "link": ""
     },
     {
         "title": "Higher Secondary Certificate",
         "score": 82.92,
         "total": 100,
         "passingYear": 2020,
-        "institute": "Nirman Higher Secondary School"
+        "institute": "Nirman Higher Secondary School",
+        "link": "/certificates/12th Result.pdf"
     },
     {
         "title": "Secondary School Certificate",
         "score": 87.83,
         "total": 100,
         "passingYear": 2018,
-        "institute": "Nirman Higher Secondary School"
+        "institute": "Nirman Higher Secondary School",
+        "link": "/certificates/10th Result.pdf"
     }
 ]

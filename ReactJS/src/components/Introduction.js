@@ -4,7 +4,7 @@ const Introduction = () => {
     const name = "Vihar Shah";
     const role = "Developer";
     return (
-        <div style={{background: "url(introduction.webp) no-repeat center center/cover"}}>
+        <div style={{background: "url(/images/introduction.webp) no-repeat center center/cover"}}>
             <div className="container text-light py-5" style={{fontFamily: "satisfy"}}>
                 <div className="p-5 text-center rounded-3">
                     <p className="display-4 fst-italic">I am Vihar Shah</p>

@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav className={`navbar shadow-lg navbar-expand-sm navbar-${theme}`} aria-label="Offcanvas navbar large" style={{background: background}}>
             <div className="container-fluid">
                 <a className="navbar-brand d-flex align-items-center" href="/">
-                    <img className="navbar-brand mx-2" src="logo.png" alt="Vihar Shah" width={LOGO_DIMENSIONS} height={LOGO_DIMENSIONS}/>
+                    <img className="navbar-brand mx-2" src="/images/logo.png" alt="Vihar Shah" width={LOGO_DIMENSIONS} height={LOGO_DIMENSIONS}/>
                 </a>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">

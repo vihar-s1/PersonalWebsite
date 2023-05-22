@@ -43,7 +43,7 @@ const ContactMe = () => {
     return (    
         <div 
             className={`d-flex justify-content-center flex-wrap ${TEXT_THEME}`} 
-            style={{background: "url(contactme.jpg) no-repeat center center/cover", fontFamily: "kalam"}}
+            style={{background: "url(/images/contactme.jpg) no-repeat center center/cover", fontFamily: "kalam"}}
         >
             
             <div className="col-md-5 p-4 m-3 bg-light bg-opacity-10 shadow-lg">
