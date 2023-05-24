@@ -6,3 +6,6 @@ build
 # SanityIO Specific Files to Ignore
 *.log
 *.sanity
+
+# NextJS specific Files to Ignore
+.next
