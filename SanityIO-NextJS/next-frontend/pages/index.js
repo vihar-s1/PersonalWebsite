@@ -106,6 +106,7 @@ export default function Home({ blogs }) {
                     src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
                 ></Script>
             </Head>
+
             <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
                 <div className="container flex items-center justify-between">
                     <div>
@@ -196,51 +197,51 @@ export default function Home({ blogs }) {
 
                     <ul className="mt-8 flex flex-col">
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#about">
                                 About
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#services">
                                 Services
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#portfolio">
                                 Portfolio
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#clients">
                                 Clients
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#work">
                                 Work
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#statistics">
                                 Statistics
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#blog">
                                 Blog
-                            </span>
+                            </a>
                         </li>
 
                         <li className="py-2">
-                            <span className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#contact">
                                 Contact
-                            </span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -918,15 +919,15 @@ export default function Home({ blogs }) {
                             Check out my latest posts!
                         </h4>
                         <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-                            {blogs.slice(0,3).map((blog) => {
+                            {blogs.map((blog) => {
                                 return (
-                                    <Link key={blog._id} href={`/blog/${blog.slug.current}`} target="_blank" className="shadow" >
+                                    <Link key={blog._id} href={`/blogs/${blog.slug.current}`} target="_blank" className="shadow shadow-purple-400" >
                                         <div
                                             style={{ backgroundImage: `url(${urlFor(blog.BlogImage)})` }}
                                             className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
                                         >
                                             <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                                            <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">
+                                            <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-purple-700 bg-purple-700 bg-opacity-30 px-6 py-2 text-center font-body text-sm font-bold uppercase text-purple-200 md:text-base">
                                                 Read More
                                             </span>
                                         </div>
@@ -1090,7 +1091,7 @@ export async function getServerSideProps(context) {
         useCdn: false,
     });
 
-    const query = `*[_type == "blog"]`;
+    const query = `*[_type == "blog"][0...3]`;
     const blogs = await client.fetch(query);
     return {
         props: {
