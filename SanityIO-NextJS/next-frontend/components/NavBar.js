@@ -7,7 +7,7 @@ const NavBar = () => {
         <>
             <div className="bg-[#493798]">
                 <div className="w-full z-50 top-0 py-3 sm:py-5  bg-primary ">
-                    <div className="container flex items-center justify-between">
+                    <div className="container flex items-center justify-around">
                         <div>
                             <a href="/">
                                 <img

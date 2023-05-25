@@ -6,27 +6,32 @@ import { createClient } from "next-sanity";
 
 import imageUrlBuilder from '@sanity/image-url'
 
-const client = createClient({
-	projectId: "gse4qw7e",
-	dataset: "production",
-	useCdn: false,
-});
-const builder = imageUrlBuilder(client);
-
-
-const urlFor = (source) => {
-	
-	const image_url_builder =  builder.image(source);
-
-	try {
-		return image_url_builder.url();
-	}
-	catch {
-		return "/images/post-01.png";
-	}
-}
-
-export default function Home({ blogs }) {
+export default function Home({ blogs, profile }) {
+    
+    const client = createClient({
+        projectId: "gse4qw7e",
+        dataset: "production",
+        useCdn: false,
+    });
+    
+    const builder = imageUrlBuilder(client);
+    
+    // const profile = {
+    //     name: "Vihar Shah",
+    //     title: "Vihar Shah",
+    //     image: "",
+    //     linkedin: "https://www.linkedin.com/in/vihar-shah-263685230",
+    //     whatsapp: "https://wa.me/9377402438?text=Hi!%20I%20am%20",
+    //     github: "https://github.com/vihar-s1",
+    //     mail: "mailto:vihar2121@gmail.com"
+    // }
+    
+    const urlFor = (source) => {
+        const image_url_builder =  builder.image(source);
+    
+        try { return image_url_builder.url(); }
+        catch { return "/images/post-01.png"; }
+    }
     return (
         <>
             <Script src="/assets/js/main.js" />
@@ -40,7 +45,7 @@ export default function Home({ blogs }) {
                     name="viewport"
                 />
 
-                <title>Homepage | Atom Template</title>
+                <title>{profile.title} | Developer </title>
 
                 <meta property="og:title" content="Homepage | Atom Template" />
 
@@ -61,17 +66,13 @@ export default function Home({ blogs }) {
 
                 <meta property="og:site_name" content="Atom Template" />
 
-                <meta property="og:image" content="//images/social.jpg" />
+                <meta property="og:image" content="/images/social.jpg" />
 
                 <meta name="twitter:card" content="summary_large_image" />
 
                 <meta name="twitter:site" content="@tailwindmade" />
 
-                <link
-                    crossorigin="crossorigin"
-                    href="https://fonts.gstatic.com"
-                    rel="preconnect"
-                />
+                <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
 
                 <link
                     as="style"
@@ -85,7 +86,7 @@ export default function Home({ blogs }) {
                 />
 
                 <link
-                    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+                    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
                     rel="stylesheet"
                 />
 
@@ -108,14 +109,10 @@ export default function Home({ blogs }) {
             </Head>
 
             <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
-                <div className="container flex items-center justify-between">
+                <div className="container flex items-center justify-around">
                     <div>
                         <a href="/">
-                            <img
-                                src="/images/logo.png"
-                                className="w-24 lg:w-48"
-                                alt="logo image"
-                            />
+                            <h2 className="text-white text-5xl font-bold">{profile.title}</h2>
                         </a>
                     </div>
                     <div className="hidden lg:block">
@@ -258,14 +255,14 @@ export default function Home({ blogs }) {
                         <div className="flex flex-col items-center justify-center lg:flex-row">
                             <div className="rounded-full border-8 border-primary shadow-xl">
                                 <img
-                                    src="/images/blog-author.jpg"
+                                    src={urlFor(profile.image)}
                                     className="h-48 rounded-full sm:h-56"
                                     alt="author"
                                 />
                             </div>
                             <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
                                 <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                                    Hello I'm Christy Smith!
+                                    Hello I'm {profile.name}!
                                 </h1>
                                 <div className="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
                                     <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
@@ -277,22 +274,22 @@ export default function Home({ blogs }) {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                                        <a href="/">
-                                            <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
+                                        <a href={profile.mail} target="_blank" className="pl-4">
+                                            <i className="bx bxl-gmail text-2xl text-white hover:text-yellow"></i>
                                         </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
+                                        <a href={profile.github} target="_blank" className="pl-4">
+                                            <i className="bx bxl-github text-2xl text-white hover:text-yellow"></i>
                                         </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-                                        </a>
-                                        <a href="/" className="pl-4">
+                                        <a href={profile.linkedin} target="_blank" className="pl-4">
                                             <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
                                         </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
+                                        <a href={profile.whatsapp} target="_blank" className="pl-4">
+                                            <i className="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
                                         </a>
                                     </div>
+                                </div>
+                                <div className="buttons text-center lg:text-left my-5">
+                                    <Link className="bg-purple-600 text-white border-2 px-4 py-1 rounded-2xl" href="/blogs">All Blogs</Link>
                                 </div>
                             </div>
                         </div>
@@ -1093,9 +1090,11 @@ export async function getServerSideProps(context) {
 
     const query = `*[_type == "blog"][0...3]`;
     const blogs = await client.fetch(query);
+    const profileQuery = `*[_type == "profile"][0]`;
+    const profile = await client.fetch(profileQuery);
     return {
         props: {
-            blogs,
+            blogs: blogs, profile: profile
         },
     };
 }
