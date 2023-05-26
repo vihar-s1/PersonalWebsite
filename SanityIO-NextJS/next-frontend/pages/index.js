@@ -5,6 +5,8 @@ import Link from "next/link";
 import { createClient } from "next-sanity";
 
 import imageUrlBuilder from '@sanity/image-url'
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export default function Home({ blogs, profile }) {
     
@@ -23,7 +25,7 @@ export default function Home({ blogs, profile }) {
     //     linkedin: "https://www.linkedin.com/in/vihar-shah-263685230",
     //     whatsapp: "https://wa.me/9377402438?text=Hi!%20I%20am%20",
     //     github: "https://github.com/vihar-s1",
-    //     mail: "mailto:vihar2121@gmail.com"
+    //     mail: "vihar2121@gmail.com"
     // }
     
     const urlFor = (source) => {
@@ -108,7 +110,7 @@ export default function Home({ blogs, profile }) {
                 ></Script>
             </Head>
 
-            <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
+            {/* <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
                 <div className="container flex items-center justify-around">
                     <div>
                         <a href="/">
@@ -242,7 +244,9 @@ export default function Home({ blogs, profile }) {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
+
+            <NavBar profile={profile} />
 
             <div>
                 <div
@@ -274,7 +278,7 @@ export default function Home({ blogs, profile }) {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                                        <a href={profile.mail} target="_blank" className="pl-4">
+                                        <a href={`mailto:${profile.mail}`} target="_blank" className="pl-4">
                                             <i className="bx bxl-gmail text-2xl text-white hover:text-yellow"></i>
                                         </a>
                                         <a href={profile.github} target="_blank" className="pl-4">
@@ -287,9 +291,6 @@ export default function Home({ blogs, profile }) {
                                             <i className="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
                                         </a>
                                     </div>
-                                </div>
-                                <div className="buttons text-center lg:text-left my-5">
-                                    <Link className="bg-purple-600 text-white border-2 px-4 py-1 rounded-2xl" href="/blogs">All Blogs</Link>
                                 </div>
                             </div>
                         </div>
@@ -829,7 +830,7 @@ export default function Home({ blogs, profile }) {
                     id="statistics"
                 >
                     <div className="container">
-                        <div className="mx-auto w-5/6 bg-white py-16 shadow md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
+                        <div className="mx-auto w-5/6 bg-white py-16 shadow-md shadow-black md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
                             <div className="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
                                 <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
                                     <div>
@@ -940,6 +941,10 @@ export default function Home({ blogs, profile }) {
                                 );
                             })}
                         </div>
+                        
+                        <div className="buttons text-center mt-20">
+                            <Link className="bg-purple-700 shadow-lg shadow-purple-700 text-white border-2 px-10 py-4 rounded-2xl text-3xl" href="/blogs">Check All Blogs</Link>
+                        </div>
                     </div>
                 </div>
 
@@ -947,47 +952,41 @@ export default function Home({ blogs, profile }) {
                     <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                         Here's a contact form
                     </h2>
-                    <h4 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                        Have Any Questions?
-                    </h4>
                     <div className="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
                         <p className="font-body text-grey-10">
-                            Lorem ipsum dolor sit amet consectetur adipiscing
-                            elit hendrerit condimentum turpis nisl sem, viverra
-                            habitasse urna ante lobortis fermentum accumsan.
-                            Viverra habitasse urna ante lobortis fermentum
-                            accumsan.
+                            Just write your name, your email, and the message and I will reach out to you soon !
                         </p>
                     </div>
                     <form className="mx-auto w-full pt-10 sm:w-3/4">
                         <div className="flex flex-col md:flex-row">
                             <input
-                                className="mr-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5"
+                                className="mr-3 w-full rounded shadow-sm shadow-purple-600 border-purple-200 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5"
                                 placeholder="Name"
                                 type="text"
                                 id="name"
                             />
                             <input
-                                className="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
+                                className="mt-6 w-full rounded shadow-sm shadow-purple-600 border-purple-200 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
                                 placeholder="Email"
                                 type="text"
                                 id="email"
                             />
                         </div>
                         <textarea
-                            className="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8"
+                            className="mt-6 w-full rounded shadow-sm shadow-purple-600 border-purple-200 px-4 py-3 font-body text-black md:mt-8"
                             placeholder="Message"
                             id="message"
                             cols="30"
                             rows="10"
                         ></textarea>
-                        <button className="mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
+                        <button className="mt-6 flex items-center justify-center rounded shadow-md shadow-purple-600 bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
                             Send
                             <i className="bx bx-chevron-right relative -right-2 text-3xl"></i>
                         </button>
                     </form>
+                    
                     <div className="flex flex-col pt-16 lg:flex-row">
-                        <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
+                        <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 shadow-md shadow-purple-3f00 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
                             <div className="flex items-center">
                                 <i className="bx bx-phone text-2xl text-grey-40"></i>
                                 <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
@@ -995,10 +994,10 @@ export default function Home({ blogs, profile }) {
                                 </p>
                             </div>
                             <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                                (+881) 111 222 333
+                                {profile.mobile}
                             </p>
                         </div>
-                        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
+                        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 shadow-md shadow-purple-3f00 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
                             <div className="flex items-center">
                                 <i className="bx bx-envelope text-2xl text-grey-40"></i>
                                 <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
@@ -1006,10 +1005,10 @@ export default function Home({ blogs, profile }) {
                                 </p>
                             </div>
                             <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                                name@mydomain.com
+                                {profile.mail}
                             </p>
                         </div>
-                        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
+                        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 shadow-md shadow-purple-3f00 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
                             <div className="flex items-center">
                                 <i className="bx bx-map text-2xl text-grey-40"></i>
                                 <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
@@ -1017,66 +1016,14 @@ export default function Home({ blogs, profile }) {
                                 </p>
                             </div>
                             <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                                123 New York D Block 1100, 2011 USA
+                                {profile.address}
                             </p>
                         </div>
                     </div>
                 </div>
-
-                <div
-                    className="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
-                    style={{ backgroundImage: "url(/images/map.png)" }}
-                ></div>
-
-                <div
-                    className="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
-                    style={{ backgroundImage: "url(/images/bg-cta.jpg)" }}
-                >
-                    <div className="container relative z-30">
-                        <h3 className="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
-                            Keep <span className="font-bold">up-to-date</span>{" "}
-                            <br />
-                            with what I'm up to
-                        </h3>
-                        <form className="mt-6 flex flex-col justify-center sm:flex-row">
-                            <input
-                                className="w-full rounded px-4 py-3 font-body text-black sm:w-2/5 sm:py-4 lg:w-1/3"
-                                type="text"
-                                id="email"
-                                placeholder="Give me your Email"
-                            />
-                            <button className="mt-2 rounded bg-yellow px-8 py-3 font-body text-base font-bold uppercase text-primary transition-colors hover:bg-primary hover:text-white focus:border-transparent focus:outline-none focus:ring focus:ring-yellow sm:ml-2 sm:mt-0 sm:py-4 md:text-lg">
-                                Join the club
-                            </button>
-                        </form>
-                    </div>
-                </div>
             </div>
 
-            <div className="bg-primary">
-                <div className="container flex flex-col justify-between py-6 sm:flex-row">
-                    <p className="text-center font-body text-white md:text-left">
-                        © Copyright 2022. All right reserved, ATOM.
-                    </p>
-                    <div className="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-                        <a href="/">
-                            <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                        <a href="/" className="pl-4">
-                            <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                        <a href="/" className="pl-4">
-                            <i className="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                        <a href="/" className="pl-4">
-                            <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                        <a href="/" className="pl-4">
-                            <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <Footer />
         </>
     );
 }

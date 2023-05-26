@@ -14,13 +14,25 @@ export default {
             name: 'slug',
             type: 'slug',
             options: {
-              source: 'title',
-              maxLength: 200, // will be ignored if slugify is set
-              slugify: input => input
-                                   .toLowerCase()
-                                   .replace(/\s+/g, '-')
-                                   .slice(0, 200)
+                source: 'title',
+                maxLength: 200, // will be ignored if slugify is set
+                slugify: input => input
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .slice(0, 200)
             }
+        },
+        {
+            name: "author",
+            type: "object",
+            fields: [
+                {
+                    title: "Author",
+                    name: "author",
+                    type: "reference",
+                    to: [{ type: "author" }],
+                },
+            ],
         },
         {
             name: "content",
@@ -79,16 +91,10 @@ export default {
             ],
         },
         {
-            name: "author",
-            type: "object",
-            fields: [
-                {
-                    title: "Author",
-                    name: "author",
-                    type: "reference",
-                    to: [{ type: "author" }],
-                },
-            ],
-        },
+            name: "tags",
+            title: "Tags",
+            type: "array",
+            of: [{type: "string"}]
+        }
     ],
 };

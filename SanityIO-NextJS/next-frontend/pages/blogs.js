@@ -5,6 +5,7 @@ import Script from "next/script";
 
 import imageUrlBuilder from "@sanity/image-url";
 import NavBar from "../components/NavBar";
+import Footer from "@/components/Footer";
 
 const client = createClient({
     projectId: "gse4qw7e",
@@ -23,10 +24,9 @@ const urlFor = (source) => {
     }
 };
 
-const blogs = (props) => {
+const blogs = ({ allBlogs, profile }) => {
     return (
-        <div>
-            
+        <div>           
             <Head>
                 <meta charset="utf-8" />
 
@@ -118,7 +118,7 @@ const blogs = (props) => {
 
                 <Script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js" />
             </Head>
-            <NavBar />
+            <NavBar profile={profile} />
             <div className="bg-grey-50" id="blog">
                 <div className="container mx-auto md:py-5">
                     <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -128,7 +128,7 @@ const blogs = (props) => {
                         Check out my latest posts!
                     </h4>
                     <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-                        {props.blogs.map((blog) => {
+                        {allBlogs.map((blog) => {
                             return (
                                 <Link
                                     key={blog._id}
@@ -163,6 +163,7 @@ const blogs = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
@@ -178,9 +179,11 @@ export async function getServerSideProps(context) {
 
     const query = `*[_type == "blog"]`;
     const blogs = await client.fetch(query);
+    const profileQuery = `*[_type == "profile"][0]`;
+    const profile = await client.fetch(profileQuery);
     return {
         props: {
-            blogs,
+            allBlogs: blogs, profile: profile
         },
     };
 }

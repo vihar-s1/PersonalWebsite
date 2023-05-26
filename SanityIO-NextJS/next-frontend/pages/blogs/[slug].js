@@ -1,11 +1,29 @@
 import { createClient } from "next-sanity";
 import Head from "next/head";
 import Script from "next/script";
+import imageUrlBuilder from "@sanity/image-url"
 
 import NavBar from "@/components/NavBar";
 import PortableText from "react-portable-text";
+import Footer from "@/components/Footer";
 
-const Post = ({ blog }) => {
+const Post = ({ blog, author, profile }) => {
+    const client = createClient({
+        projectId: "gse4qw7e",
+        dataset: "production",
+        useCdn: false,
+    });
+    const builder = imageUrlBuilder(client);
+    
+    const urlFor = (source) => {
+        const image_url_builder = builder.image(source);
+    
+        try {
+            return image_url_builder.url();
+        } catch {
+            return "/images/post-01.png";
+        }
+    };
     return (
         <>
             <Head>
@@ -99,7 +117,7 @@ const Post = ({ blog }) => {
 
                 <Script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js" />
             </Head>
-            <NavBar />
+            <NavBar profile={profile} />
             <div>
 
                 <div>
@@ -112,17 +130,17 @@ const Post = ({ blog }) => {
                                 <div className="flex items-center pt-5 md:pt-10">
                                     <div>
                                         <img
-                                            src="/images/blog-author.jpg"
+                                            src={urlFor(blog.author.image)}
                                             className="h-20 w-20 rounded-full border-2 border-grey-70 shadow"
                                             alt="author image"
                                         />
                                     </div>
                                     <div className="pl-5">
                                         <span className="block font-body text-xl font-bold text-grey-10">
-                                            By Christy Smith
+                                            By {blog.author.title}
                                         </span>
                                         <span className="block pt-1 font-body text-xl font-bold text-grey-30">
-                                            February 27, 2022
+                                            {new Date(blog._createdAt).toDateString()}
                                         </span>
                                     </div>
                                 </div>
@@ -132,23 +150,24 @@ const Post = ({ blog }) => {
                                     content={blog.content}
                                     projectId="gse4qw7e"
                                     dataset="production"
+                                    serializers={{
+                                        code: ({ children }) => <code>{children}</code>
+                                    }}
                                 />
                             </div>
                             <div className="flex pt-10">
-                                <a
-                                    href="/"
-                                    className="rounded-xl bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
-                                >
-                                    Frontend
-                                </a>
-                                <a
-                                    href="/"
-                                    className="ml-2 block rounded-xl bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
-                                >
-                                    Design
-                                </a>
+                                {
+                                    blog.tags.map((tag, index) => {
+                                            return (
+                                                <div key={index} className="rounded-xl mx-2 bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20" >
+                                                    {tag}
+                                                </div>
+                                            )
+                                        }
+                                    )
+                                }
                             </div>
-                            <div className="mt-10 flex justify-between border-t border-lila py-12">
+                            {/* <div className="mt-10 flex justify-between border-t border-lila py-12">
                                 <a href="/" className="flex items-center">
                                     <i className="bx bx-left-arrow-alt text-2xl text-primary"></i>
                                     <span className="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5">
@@ -161,76 +180,29 @@ const Post = ({ blog }) => {
                                     </span>
                                     <i className="bx bx-right-arrow-alt text-2xl text-primary"></i>
                                 </a>
-                            </div>
-                            <div className="flex flex-col items-center border-t border-lila py-12 pt-12 md:flex-row md:items-start xl:pb-20">
+                            </div> */}
+                            <div className="mt-10 flex flex-col items-center border-t border-lila py-12 pt-12 md:flex-row md:items-start xl:pb-20">
                                 <div className="w-3/4 sm:w-2/5 lg:w-1/4 xl:w-1/5">
                                     <img
-                                        src="/images/blog-author.jpg"
+                                        src={urlFor(blog.author.image)}
                                         className="rounded-full shadow"
                                         alt="author image"
                                     />
                                 </div>
                                 <div className="ml-0 text-center md:ml-10 md:w-5/6 md:text-left">
                                     <h3 className="pt-10 font-body text-2xl font-bold text-secondary md:pt-0">
-                                        Christy Smith
+                                        {blog.author.title}
                                     </h3>
                                     <p className="pt-5 font-body text-lg leading-8 text-secondary sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris
-                                        nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit
-                                        in voluptate velit.
+                                        {blog.author.about}
                                     </p>
-                                    <div className="flex items-center justify-center pt-5 md:justify-start">
-                                        <a href="/">
-                                            <i className="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
-                                        </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
-                                        </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-dribbble text-2xl text-primary hover:text-yellow"></i>
-                                        </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-                                        </a>
-                                        <a href="/" className="pl-4">
-                                            <i className="bx bxl-instagram text-2xl text-primary hover:text-yellow"></i>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="bg-primary">
-                    <div className="container flex flex-col justify-between py-6 sm:flex-row">
-                        <p className="text-center font-body text-white md:text-left">
-                            © Copyright 2022. All right reserved, ATOM.
-                        </p>
-                        <div className="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-                            <a href="/">
-                                <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                            </a>
-                            <a href="/" className="pl-4">
-                                <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-                            </a>
-                            <a href="/" className="pl-4">
-                                <i className="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-                            </a>
-                            <a href="/" className="pl-4">
-                                <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                            </a>
-                            <a href="/" className="pl-4">
-                                <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <Footer />
             </div>
         </>
     );
@@ -247,11 +219,17 @@ export const getServerSideProps = (async (context) => {
         useCdn: false,
     });
 
-    const query = `*[_type == "blog" && slug.current == "${slug}"]`;
+    const query = `*[_type == "blog" && slug.current == "${slug}"][0]`;
     const blog = await client.fetch(query);
+    const profileQuery = `*[_type == "profile"][0]`;
+    const profile = await client.fetch(profileQuery);
+    
+    blog.author = await client.fetch(`*[_id == "${blog.author.author._ref}"][0]`)
+
     return {
         props: {
-            blog: blog[0]
+            blog: blog,
+            profile: profile
         }
     };
 });

@@ -1,20 +1,24 @@
-import React from "react";
-import Head from "next/head";
-import Script from "next/script";
+import React, { useState } from "react";
 
-const NavBar = () => {
+const NavBar = ({ profile }) => {
+    const [mobileViewClass, setmobileViewClass] = useState("pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden");
+
+    const enableMobileView = () => {
+        setmobileViewClass("opacity-100 z-70 pointer-events-auto");
+    }
+
+    const disableMobileView = () => {
+        setmobileViewClass("pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden");
+    }
+
     return (
         <>
             <div className="bg-[#493798]">
-                <div className="w-full z-50 top-0 py-3 sm:py-5  bg-primary ">
+                <div className="w-full z-50 top-0 py-3 sm:py-5  bg-primary">
                     <div className="container flex items-center justify-around">
                         <div>
                             <a href="/">
-                                <img
-                                    src="/images/logo.png"
-                                    className="w-8 lg:w-16"
-                                    alt="logo image"
-                                />
+                                <h2 className="text-white text-4xl font-bold">{profile.title}</h2>
                             </a>
                         </div>
                         <div className="hidden lg:block">
@@ -109,16 +113,16 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="block lg:hidden">
-                            <button>
+                            <button onClick={enableMobileView}>
                                 <i className="bx bx-menu text-4xl text-white"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div className="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden">
-                    <div className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-                        <button className="absolute top-0 right-0 mt-4 mr-4">
+                <div className={mobileViewClass}>
+                    <div className="fixed z-70 top-0 right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow-2xl md:w-1/3">
+                        <button onClick={disableMobileView} className="absolute top-0 right-0 mt-4 mr-4">
                             <img
                                 src="/icons/close.svg"
                                 className="h-10 w-auto"

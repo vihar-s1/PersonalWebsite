@@ -36,7 +36,17 @@ export default {
         {
             name: "mail",
             type: "string",
-            title: "Mail Link"
+            title: "Mail"
         },
+        {
+            name: "mobile",
+            type: "string",
+            title: "Mobile"
+        },
+        {
+            name: "address",
+            type: "string",
+            title: "Address"
+        }
     ]
 }
