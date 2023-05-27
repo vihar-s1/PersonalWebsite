@@ -6,6 +6,7 @@ import Script from "next/script";
 import imageUrlBuilder from "@sanity/image-url";
 import NavBar from "../components/NavBar";
 import Footer from "@/components/Footer";
+import BlogCard from "@/components/BlogCard";
 
 const client = createClient({
     projectId: "gse4qw7e",
@@ -122,42 +123,12 @@ const blogs = ({ allBlogs, profile }) => {
             <div className="bg-grey-50" id="blog">
                 <div className="container mx-auto md:py-5">
                     <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                        I also like to write
+                        Check out all of my posts!
                     </h2>
-                    <h4 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                        Check out my latest posts!
-                    </h4>
                     <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
                         {allBlogs.map((blog) => {
                             return (
-                                <Link
-                                    key={blog._id}
-                                    href={`/blogs/${blog.slug.current}`}
-                                    target="_blank"
-                                    className="shadow-lg shadow-purple-300"
-                                >
-                                    <div
-                                        style={{
-                                            backgroundImage: `url(${urlFor(
-                                                blog.BlogImage
-                                            )})`,
-                                        }}
-                                        className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-                                    >
-                                        <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                                        <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-purple-700 bg-purple-700 bg-opacity-30 px-6 py-2 text-center font-body text-sm font-bold uppercase text-purple-200 md:text-base">
-                                            Read More
-                                        </span>
-                                    </div>
-                                    <div className="bg-white py-6 px-5 xl:py-8">
-                                        <span className="block font-body text-lg font-semibold text-black">
-                                            {blog.title}
-                                        </span>
-                                        <span className="block pt-2 font-body text-grey-20">
-                                            {blog.MetaDescription}
-                                        </span>
-                                    </div>
-                                </Link>
+                                <BlogCard key={blog._id} blog={blog} urlFor={urlFor} />
                             );
                         })}
                     </div>
@@ -177,10 +148,11 @@ export async function getServerSideProps(context) {
         useCdn: false,
     });
 
-    const query = `*[_type == "blog"]`;
+    const query = `*[_type == "blog"] | order(CreatedAt desc)`;
     const blogs = await client.fetch(query);
     const profileQuery = `*[_type == "profile"][0]`;
     const profile = await client.fetch(profileQuery);
+    
     return {
         props: {
             allBlogs: blogs, profile: profile

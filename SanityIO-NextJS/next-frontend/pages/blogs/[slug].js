@@ -140,7 +140,7 @@ const Post = ({ blog, author, profile }) => {
                                             By {blog.author.title}
                                         </span>
                                         <span className="block pt-1 font-body text-xl font-bold text-grey-30">
-                                            {new Date(blog._createdAt).toDateString()}
+                                            {new Date(blog.CreatedAt).toDateString()}
                                         </span>
                                     </div>
                                 </div>

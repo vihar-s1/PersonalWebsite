@@ -3,10 +3,13 @@ import Script from "next/script";
 import Link from "next/link";
 
 import { createClient } from "next-sanity";
-
 import imageUrlBuilder from '@sanity/image-url'
+
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import ContactMe from "@/components/ContactMe";
+import BlogCard from "@/components/BlogCard";
+import AboutMe from "@/components/AboutMe";
 
 export default function Home({ blogs, profile }) {
     
@@ -110,141 +113,6 @@ export default function Home({ blogs, profile }) {
                 ></Script>
             </Head>
 
-            {/* <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
-                <div className="container flex items-center justify-around">
-                    <div>
-                        <a href="/">
-                            <h2 className="text-white text-5xl font-bold">{profile.title}</h2>
-                        </a>
-                    </div>
-                    <div className="hidden lg:block">
-                        <ul className="flex items-center">
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#about">
-                                    About
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#services">
-                                    Services
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#portfolio">
-                                    Portfolio 
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#clients">
-                                    Clients
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#work">
-                                    Work
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#statistics">
-                                    Statistics
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#blog">
-                                    Blog
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-
-                            <li className="group pl-6">
-                                <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="#contact">
-                                    Contact
-                                </a>
-                                <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow" style={{transitionDuration: "0.3s"}}></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="block lg:hidden">
-                        <button>
-                            <i className="bx bx-menu text-4xl text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div className="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden">
-                <div className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-                    <button className="absolute top-0 right-0 mt-4 mr-4">
-                        <img
-                            src="/icons/close.svg"
-                            className="h-10 w-auto"
-                            alt=""
-                        />
-                    </button>
-
-                    <ul className="mt-8 flex flex-col">
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#about">
-                                About
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#services">
-                                Services
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#portfolio">
-                                Portfolio
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#clients">
-                                Clients
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#work">
-                                Work
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#statistics">
-                                Statistics
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#blog">
-                                Blog
-                            </a>
-                        </li>
-
-                        <li className="py-2">
-                            <a className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" href="/#contact">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div> */}
 
             <NavBar profile={profile} />
 
@@ -297,123 +165,7 @@ export default function Home({ blogs, profile }) {
                     </div>
                 </div>
 
-                <div className="bg-grey-50" id="about">
-                    <div className="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
-                        <div className="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-                            <h2 className="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                                Who am I?
-                            </h2>
-                            <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                                I'm Christy Smith, a Web Designer & Photographer
-                            </h4>
-                            <p className="pt-6 font-body leading-relaxed text-grey-20">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut
-                                enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur. Excepteur sint
-                                occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
-                                <div className="flex items-center justify-center sm:justify-start">
-                                    <p className="font-body text-lg font-semibold uppercase text-grey-20">
-                                        Connect with me
-                                    </p>
-                                    <div className="hidden sm:block">
-                                        <i className="bx bx-chevron-right text-2xl text-primary"></i>
-                                    </div>
-                                </div>
-                                <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                                    <a href="/">
-                                        <i className="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
-                                    </a>
-                                    <a href="/" className="pl-4">
-                                        <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
-                                    </a>
-                                    <a href="/" className="pl-4">
-                                        <i className="bx bxl-dribbble text-2xl text-primary hover:text-yellow"></i>
-                                    </a>
-                                    <a href="/" className="pl-4">
-                                        <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-                                    </a>
-                                    <a href="/" className="pl-4">
-                                        <i className="bx bxl-instagram text-2xl text-primary hover:text-yellow"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-                            <div>
-                                <div className="flex items-end justify-between">
-                                    <h4 className="font-body font-semibold uppercase text-black">
-                                        HTML & CSS
-                                    </h4>
-                                    <h3 className="font-body text-3xl font-bold text-primary">
-                                        85%
-                                    </h3>
-                                </div>
-                                <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                                    <div
-                                        className="h-3 rounded-full bg-primary"
-                                        style={{ width: "85%" }}
-                                    ></div>
-                                </div>
-                            </div>
-                            <div className="pt-6">
-                                <div className="flex items-end justify-between">
-                                    <h4 className="font-body font-semibold uppercase text-black">
-                                        Python
-                                    </h4>
-                                    <h3 className="font-body text-3xl font-bold text-primary">
-                                        70%
-                                    </h3>
-                                </div>
-                                <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                                    <div
-                                        className="h-3 rounded-full bg-primary"
-                                        style={{ width: "70%" }}
-                                    ></div>
-                                </div>
-                            </div>
-                            <div className="pt-6">
-                                <div className="flex items-end justify-between">
-                                    <h4 className="font-body font-semibold uppercase text-black">
-                                        Javascript
-                                    </h4>
-                                    <h3 className="font-body text-3xl font-bold text-primary">
-                                        98%
-                                    </h3>
-                                </div>
-                                <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                                    <div
-                                        className="h-3 rounded-full bg-primary"
-                                        style={{ width: "98%" }}
-                                    ></div>
-                                </div>
-                            </div>
-                            <div className="pt-6">
-                                <div className="flex items-end justify-between">
-                                    <h4 className="font-body font-semibold uppercase text-black">
-                                        Figma
-                                    </h4>
-                                    <h3 className="font-body text-3xl font-bold text-primary">
-                                        91%
-                                    </h3>
-                                </div>
-                                <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                                    <div
-                                        className="h-3 rounded-full bg-primary"
-                                        style={{ width: "91%" }}
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <AboutMe profile={profile}/>
 
                 <div className="container py-16 md:py-20" id="services">
                     <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -919,25 +671,7 @@ export default function Home({ blogs, profile }) {
                         <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
                             {blogs.map((blog) => {
                                 return (
-                                    <Link key={blog._id} href={`/blogs/${blog.slug.current}`} target="_blank" className="shadow shadow-purple-400" >
-                                        <div
-                                            style={{ backgroundImage: `url(${urlFor(blog.BlogImage)})` }}
-                                            className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-                                        >
-                                            <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                                            <span className="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-purple-700 bg-purple-700 bg-opacity-30 px-6 py-2 text-center font-body text-sm font-bold uppercase text-purple-200 md:text-base">
-                                                Read More
-                                            </span>
-                                        </div>
-                                        <div className="bg-white py-6 px-5 xl:py-8">
-                                            <span className="block font-body text-lg font-semibold text-black">
-                                                {blog.title}
-                                            </span>
-                                            <span className="block pt-2 font-body text-grey-20">
-                                                {blog.MetaDescription}
-                                            </span>
-                                        </div>
-                                    </Link>
+                                    <BlogCard key={blog._id} blog={blog} urlFor={urlFor} />
                                 );
                             })}
                         </div>
@@ -948,79 +682,7 @@ export default function Home({ blogs, profile }) {
                     </div>
                 </div>
 
-                <div className="container py-16 md:py-20" id="contact">
-                    <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                        Here's a contact form
-                    </h2>
-                    <div className="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-                        <p className="font-body text-grey-10">
-                            Just write your name, your email, and the message and I will reach out to you soon !
-                        </p>
-                    </div>
-                    <form className="mx-auto w-full pt-10 sm:w-3/4">
-                        <div className="flex flex-col md:flex-row">
-                            <input
-                                className="mr-3 w-full rounded shadow-sm shadow-purple-600 border-purple-200 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5"
-                                placeholder="Name"
-                                type="text"
-                                id="name"
-                            />
-                            <input
-                                className="mt-6 w-full rounded shadow-sm shadow-purple-600 border-purple-200 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
-                                placeholder="Email"
-                                type="text"
-                                id="email"
-                            />
-                        </div>
-                        <textarea
-                            className="mt-6 w-full rounded shadow-sm shadow-purple-600 border-purple-200 px-4 py-3 font-body text-black md:mt-8"
-                            placeholder="Message"
-                            id="message"
-                            cols="30"
-                            rows="10"
-                        ></textarea>
-                        <button className="mt-6 flex items-center justify-center rounded shadow-md shadow-purple-600 bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
-                            Send
-                            <i className="bx bx-chevron-right relative -right-2 text-3xl"></i>
-                        </button>
-                    </form>
-                    
-                    <div className="flex flex-col pt-16 lg:flex-row">
-                        <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 shadow-md shadow-purple-3f00 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
-                            <div className="flex items-center">
-                                <i className="bx bx-phone text-2xl text-grey-40"></i>
-                                <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                                    My Phone
-                                </p>
-                            </div>
-                            <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                                {profile.mobile}
-                            </p>
-                        </div>
-                        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 shadow-md shadow-purple-3f00 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
-                            <div className="flex items-center">
-                                <i className="bx bx-envelope text-2xl text-grey-40"></i>
-                                <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                                    My Email
-                                </p>
-                            </div>
-                            <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                                {profile.mail}
-                            </p>
-                        </div>
-                        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 shadow-md shadow-purple-3f00 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
-                            <div className="flex items-center">
-                                <i className="bx bx-map text-2xl text-grey-40"></i>
-                                <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                                    My Address
-                                </p>
-                            </div>
-                            <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                                {profile.address}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <ContactMe profile={profile}/>
             </div>
 
             <Footer />
