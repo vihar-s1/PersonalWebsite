@@ -1,7 +1,7 @@
 import { createClient } from "next-sanity";
 import Head from "next/head";
 import Script from "next/script";
-import imageUrlBuilder from "@sanity/image-url"
+import imageUrlBuilder from "@sanity/image-url";
 
 import NavBar from "@/components/NavBar";
 import PortableText from "react-portable-text";
@@ -14,10 +14,10 @@ const Post = ({ blog, author, profile }) => {
         useCdn: false,
     });
     const builder = imageUrlBuilder(client);
-    
+
     const urlFor = (source) => {
         const image_url_builder = builder.image(source);
-    
+
         try {
             return image_url_builder.url();
         } catch {
@@ -29,21 +29,16 @@ const Post = ({ blog, author, profile }) => {
             <Head>
                 <meta charset="utf-8" />
 
-                <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+                <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
 
                 <meta
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
                     name="viewport"
                 />
 
-                <title>
-                    { blog.title }
-                </title>
+                <title>{blog.title}</title>
 
-                <meta
-                    property="og:title"
-                    content={blog.title}
-                />
+                <meta property="og:title" content={blog.title} />
 
                 <meta property="og:locale" content="en_US" />
 
@@ -56,10 +51,7 @@ const Post = ({ blog, author, profile }) => {
                     content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 />
 
-                <link
-                    rel="icon"
-                    href="/favicon.ico"
-                />
+                <link rel="icon" href="/favicon.ico" />
 
                 <meta name="theme-color" content="#5540af" />
 
@@ -72,7 +64,7 @@ const Post = ({ blog, author, profile }) => {
                 <meta name="twitter:site" content="@tailwindmade" />
 
                 <link
-                    crossorigin="crossorigin"
+                    crossOrigin="crossorigin"
                     href="https://fonts.gstatic.com"
                     rel="preconnect"
                 />
@@ -94,7 +86,7 @@ const Post = ({ blog, author, profile }) => {
                 />
 
                 <link
-                    crossorigin="anonymous"
+                    crossOrigin="anonymous"
                     href="/assets/styles/main.min.css"
                     media="screen"
                     rel="stylesheet"
@@ -119,7 +111,6 @@ const Post = ({ blog, author, profile }) => {
             </Head>
             <NavBar profile={profile} />
             <div>
-
                 <div>
                     <div className="container py-6 md:py-10">
                         <div className="mx-auto max-w-4xl">
@@ -140,7 +131,9 @@ const Post = ({ blog, author, profile }) => {
                                             By {blog.author.title}
                                         </span>
                                         <span className="block pt-1 font-body text-xl font-bold text-grey-30">
-                                            {new Date(blog.CreatedAt).toDateString()}
+                                            {new Date(
+                                                blog.CreatedAt
+                                            ).toDateString()}
                                         </span>
                                     </div>
                                 </div>
@@ -151,21 +144,23 @@ const Post = ({ blog, author, profile }) => {
                                     projectId="gse4qw7e"
                                     dataset="production"
                                     serializers={{
-                                        code: ({ children }) => <code>{children}</code>
+                                        code: ({ children }) => (
+                                            <code>{children}</code>
+                                        ),
                                     }}
                                 />
                             </div>
                             <div className="flex pt-10">
-                                {
-                                    blog.tags.map((tag, index) => {
-                                            return (
-                                                <div key={index} className="rounded-xl mx-2 bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20" >
-                                                    {tag}
-                                                </div>
-                                            )
-                                        }
-                                    )
-                                }
+                                {blog.tags.map((tag, index) => {
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="rounded-xl mx-2 bg-primary px-4 py-1 font-body font-bold text-white hover:bg-grey-20"
+                                        >
+                                            {tag}
+                                        </div>
+                                    );
+                                })}
                             </div>
                             {/* <div className="mt-10 flex justify-between border-t border-lila py-12">
                                 <a href="/" className="flex items-center">
@@ -210,7 +205,7 @@ const Post = ({ blog, author, profile }) => {
 
 export default Post;
 
-export const getServerSideProps = (async (context) => {
+export const getServerSideProps = async (context) => {
     const { slug } = context.query;
 
     const client = createClient({
@@ -223,13 +218,15 @@ export const getServerSideProps = (async (context) => {
     const blog = await client.fetch(query);
     const profileQuery = `*[_type == "profile"][0]`;
     const profile = await client.fetch(profileQuery);
-    
-    blog.author = await client.fetch(`*[_id == "${blog.author.author._ref}"][0]`)
+
+    blog.author = await client.fetch(
+        `*[_id == "${blog.author.author._ref}"][0]`
+    );
 
     return {
         props: {
             blog: blog,
-            profile: profile
-        }
+            profile: profile,
+        },
     };
-});
+};

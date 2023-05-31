@@ -34,7 +34,7 @@ const ContactMe = ({ profile }) => {
                     cols="30"
                     rows="10"
                 ></textarea>
-                <button className="mt-6 flex items-center justify-center rounded shadow-md shadow-purple-600 bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
+                <button className="mt-6 flex items-center justify-center rounded shadow-md shadow-purple-600 bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white transition-colors hover:bg-grey-20">
                     Send
                     <i className="bx bx-chevron-right relative -right-2 text-3xl"></i>
                 </button>

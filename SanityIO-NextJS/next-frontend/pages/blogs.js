@@ -7,6 +7,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import NavBar from "../components/NavBar";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/BlogCard";
+import ToTop from "@/components/ToTop";
 
 const client = createClient({
     projectId: "gse4qw7e",
@@ -31,7 +32,7 @@ const blogs = ({ allBlogs, profile }) => {
             <Head>
                 <meta charset="utf-8" />
 
-                <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+                <meta content="IE=edge,chrome=1" httpEquiv="X-UA-Compatible" />
 
                 <meta
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -74,7 +75,7 @@ const blogs = ({ allBlogs, profile }) => {
                 <meta name="twitter:site" content="@tailwindmade" />
 
                 <link
-                    crossorigin="crossorigin"
+                    crossOrigin="crossorigin"
                     href="https://fonts.gstatic.com"
                     rel="preconnect"
                 />
@@ -96,7 +97,7 @@ const blogs = ({ allBlogs, profile }) => {
                 />
 
                 <link
-                    crossorigin="anonymous"
+                    crossOrigin="anonymous"
                     href="/assets/styles/main.min.css"
                     media="screen"
                     rel="stylesheet"
@@ -134,6 +135,8 @@ const blogs = ({ allBlogs, profile }) => {
                     </div>
                 </div>
             </div>
+
+            <ToTop />
             <Footer />
         </div>
     );

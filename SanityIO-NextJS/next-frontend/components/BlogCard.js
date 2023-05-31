@@ -6,7 +6,7 @@ const BlogCard = ({ blog, urlFor }) => {
         <Link
             href={`/blogs/${blog.slug.current}`}
             target="_blank"
-            className="shadow shadow-purple-400"
+            className="shadow shadow-purple-400 transform transition-all hover:scale-105"
         >
             <div
                 style={{ backgroundImage: `url(${urlFor(blog.BlogImage)})` }}
