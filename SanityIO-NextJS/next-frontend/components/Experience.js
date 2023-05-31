@@ -49,13 +49,17 @@ const Experience = ({ experience }) => {
             <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
                 <span className="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
                 {
-                    experience.length > 0 && experience.map((work, index) => {
+                    experience != undefined && experience.length > 0 && experience.map((work) => {
                         return (
                             <WorkCard key={work._key} work={work}/>
                         )
                     }
                 )}
             </div>
+            {
+                experience == undefined && 
+                <div className="block text-center pt-2 font-header text-2xl font-bold text-primary md:text-4xl">I am still a Fresher looking for something !</div>
+            }
         </div>
     )
 }

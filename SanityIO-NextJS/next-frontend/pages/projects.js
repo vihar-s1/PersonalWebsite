@@ -6,12 +6,12 @@ import Script from "next/script";
 import imageUrlBuilder from "@sanity/image-url";
 import NavBar from "../components/NavBar";
 import Footer from "@/components/Footer";
-import BlogCard from "@/components/BlogCard";
+import ProjectCard from "@/components/ProjectCard";
 import ToTop from "@/components/ToTop";
 
 const client = createClient({
-    projectId: "gse4qw7e",
-    dataset: "production",
+    projectId: process.env.NEXT_PUBLIC_projectId,
+    dataset: process.env.NEXT_PUBLIC_dataset,
     useCdn: false,
 });
 const builder = imageUrlBuilder(client);
@@ -26,9 +26,9 @@ const urlFor = (source) => {
     }
 };
 
-const blogs = ({ allBlogs, profile }) => {
+const projects = ({ profile }) => {
     return (
-        <div>           
+        <div>
             <Head>
                 <meta charset="utf-8" />
 
@@ -39,9 +39,7 @@ const blogs = ({ allBlogs, profile }) => {
                     name="viewport"
                 />
 
-                <title>
-                    All Blogs
-                </title>
+                <title>All Projects</title>
 
                 <meta
                     property="og:title"
@@ -59,10 +57,7 @@ const blogs = ({ allBlogs, profile }) => {
                     content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 />
 
-                <link
-                    rel="icon"
-                    href="/favicon.ico"
-                />
+                <link rel="icon" href="/favicon.ico" />
 
                 <meta name="theme-color" content="#5540af" />
 
@@ -121,17 +116,21 @@ const blogs = ({ allBlogs, profile }) => {
                 <Script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js" />
             </Head>
             <NavBar profile={profile} />
-            <div className="bg-grey-50" id="blog">
+
+            <div className="bg-grey-50" id="projects">
                 <div className="container mx-auto md:py-5">
                     <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                        Check out all of my posts!
+                        Check out all of my projects!
                     </h2>
-                    <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-                        {allBlogs.map((blog) => {
-                            return (
-                                <BlogCard key={blog._id} blog={blog} urlFor={urlFor} />
-                            );
-                        })}
+                    <div className="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
+                        { (profile.projects == undefined || profile.projects.length == 0) && "No Projects Yet!!" }
+                        { 
+                            profile.projects != undefined &&  profile.projects.length > 0 && profile.projects.map((project, index) => {
+                                return (
+                                    <ProjectCard key={index} project={project} urlFor={urlFor} />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -142,23 +141,21 @@ const blogs = ({ allBlogs, profile }) => {
     );
 };
 
-export default blogs;
+export default projects;
 
 export async function getServerSideProps(context) {
     const client = createClient({
-        projectId: "gse4qw7e",
-        dataset: "production",
+        projectId: process.env.NEXT_PUBLIC_projectId,
+        dataset: process.env.NEXT_PUBLIC_dataset,
         useCdn: false,
     });
 
-    const query = `*[_type == "blog"] | order(CreatedAt desc)`;
-    const blogs = await client.fetch(query);
-    const profileQuery = `*[_type == "profile"][0]`;
-    const profile = await client.fetch(profileQuery);
-    
+    const query = `*[_type == "profile"][0]`;
+    const profile = await client.fetch(query);
+
     return {
         props: {
-            allBlogs: blogs, profile: profile
+            profile: profile
         },
     };
 }

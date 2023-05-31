@@ -15,3 +15,12 @@ contains website in React.JS.
 ## **SanityIO**
 
 Portfolio website written in sanityIO.
+
+### NextJS Frontend
+
+#### Environment File Structure
+
+```bash
+NEXT_PUBLIC_projectId=<your_sanity_backend_project_id>
+NEXT_PUBLIC_dataset=<your_sanity_dataset_name>
+```

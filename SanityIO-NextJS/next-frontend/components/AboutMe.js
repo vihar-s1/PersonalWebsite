@@ -40,28 +40,35 @@ const AboutMe = ({ profile, urlFor }) => {
                                     target="_blank"
                                     className="pl-4"
                                 >
-                                    <i className="bx bxl-gmail text-2xl text-white hover:text-yellow"></i>
+                                    <i className="bx bxl-gmail text-2xl text-white hover:text-yellow transition-colors"></i>
                                 </a>
                                 <a
                                     href={profile.github}
                                     target="_blank"
                                     className="pl-4"
                                 >
-                                    <i className="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+                                    <i className="bx bxl-github text-2xl text-white hover:text-yellow transition-colors"></i>
                                 </a>
                                 <a
                                     href={profile.linkedin}
                                     target="_blank"
                                     className="pl-4"
                                 >
-                                    <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+                                    <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow transition-colors"></i>
                                 </a>
                                 <a
                                     href={profile.whatsapp}
                                     target="_blank"
                                     className="pl-4"
                                 >
-                                    <i className="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
+                                    <i className="bx bxl-whatsapp text-2xl text-white hover:text-yellow transition-colors"></i>
+                                </a>
+                                <a
+                                    href={profile.instagram}
+                                    target="_blank"
+                                    className="pl-4"
+                                >
+                                    <i className="bx bxl-instagram text-2xl text-white hover:text-yellow transition-colors"></i>
                                 </a>
                             </div>
                         </div>

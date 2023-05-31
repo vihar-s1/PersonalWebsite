@@ -15,15 +15,15 @@ const SkillCard = ({ skill }) => {
     )
 }
 
-const Skills = ({ profile }) => {
+const Skills = ({ skills }) => {
     return (
-        <div className="containe py-16 md:py-20" id="services">
+        <div className="containe py-16 md:py-20" id="skills">
             <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                 Here's what I'm good at
             </h2>
 
-            <div className="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
-                {profile.skills.length > 0 && profile.skills.map((skill) => {
+            <div className="grid mx-5 grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+                {skills.length > 0 && skills.map((skill) => {
                     return (
                         <SkillCard key={skill._key} skill={skill} />
                     )

@@ -113,6 +113,55 @@ export default {
                     ]
                 }
             ]
+        },
+        {
+            name: "projects",
+            title: "Projects",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            title: "Title",
+                            name: "title",
+                            type: "string"
+                        },
+                        {
+                            title: "Brief",
+                            name: "brief",
+                            type: "string"
+                        },
+                        {
+                            name: "startDate",
+                            title: "Start Date",
+                            type: "date",
+                            options: { dateFormat: "MM-YYYY" }
+                        },
+                        {
+                            name: "endDate",
+                            title: "End Date",
+                            type: "date",
+                            options: { dateFormat: "MM-YYYY" }
+                        },
+                        {
+                            name: "image",
+                            title: "Image",
+                            type: "image"
+                        },
+                        {
+                            name: "projectLink",
+                            title: "Project Link",
+                            type: "string"
+                        },
+                        {
+                            name: "teamSize",
+                            title: "Team Size",
+                            type: "number"
+                        }
+                    ],
+                }
+            ]
         }
     ]
 }
