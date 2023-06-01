@@ -8,7 +8,7 @@ const ToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
     return (
-        <div className="fixed z-70 w-16 right-10 bottom-10">
+        <div className="fixed z-70 w-16 right-10 bottom-16">
             <button 
                 className="cursor-pointer py-1 w-full bg-purple-900 rounded opacity-50 transition-opacity hover:opacity-100"
                 onClick={scrollToTop}

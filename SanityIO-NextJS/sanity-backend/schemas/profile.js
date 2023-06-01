@@ -24,6 +24,16 @@ export default {
             title: "Image"
         },
         {
+            name: "mail",
+            type: "string",
+            title: "Mail ID"
+        },
+        {
+            name: "github",
+            type: "string",
+            title: "GitHub Link"
+        },
+        {
             name: "linkedin",
             type: "string",
             title: "LinkedIn Link"
@@ -34,14 +44,9 @@ export default {
             title: "WhatsApp Link"
         },
         {
-            name: "github",
+            name: "instagram",
             type: "string",
-            title: "GitHub Link"
-        },
-        {
-            name: "mail",
-            type: "string",
-            title: "Mail"
+            title: "Instagram Link"
         },
         {
             name: "mobile",

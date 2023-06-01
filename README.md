@@ -23,4 +23,6 @@ Portfolio website written in sanityIO.
 ```bash
 NEXT_PUBLIC_projectId=<your_sanity_backend_project_id>
 NEXT_PUBLIC_dataset=<your_sanity_dataset_name>
+NEXT_PUBLIC_email=<your_email_to_use_to_send_mail>
+NEXT_PUBLIC_password=<passkey_corresponding_to_above_email>
 ```
