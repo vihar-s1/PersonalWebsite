@@ -13,7 +13,7 @@ const NavBar = ({ profile }) => {
 
     return (
         <>
-            <div className="bg-[#493798]">
+            <div className="bg-[#493798] fixed z-70 w-full">
                 <div className="w-full z-50 top-0 py-3 sm:py-5  bg-primary">
                     <div className="container flex items-center justify-around">
                         <div>
@@ -24,31 +24,37 @@ const NavBar = ({ profile }) => {
                         <div className="hidden md:block">
                             <ul className="flex items-center">
                                 <li className="group pl-6">
-                                    <a href="/#about" className="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white" >
+                                    <a href="/#about" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" >
                                         About
                                     </a>
                                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                                 </li>
                                 <li className="group pl-6">
-                                    <a href="/#skills" className="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white" >
+                                    <a href="/#skills" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" >
                                         Skills
                                     </a>
                                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                                 </li>
                                 <li className="group pl-6">
-                                    <a href="/#portfolio" className="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white" >
+                                    <a href="/#portfolio" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" >
                                         Portfolio
                                     </a>
                                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                                 </li>
                                 <li className="group pl-6">
-                                    <a href="/#work" className="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white" >
+                                    <a href="/#work" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" >
                                         Work
                                     </a>
                                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                                 </li>
                                 <li className="group pl-6">
-                                    <a href="/#contact" className="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white" >
+                                    <a href="/#certificates" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" >
+                                        Certificates
+                                    </a>
+                                    <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+                                </li>
+                                <li className="group pl-6">
+                                    <a href="/#contact" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white" >
                                         Contact
                                     </a>
                                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
@@ -95,6 +101,12 @@ const NavBar = ({ profile }) => {
                             <li className="py-2">
                                 <a href="/#work" className="pt-0.5 font-header font-semibold uppercase text-white" >
                                     Work
+                                </a>
+                            </li>
+
+                            <li className="py-2">
+                                <a href="/#certificates" className="pt-0.5 font-header font-semibold uppercase text-white" >
+                                    certificates
                                 </a>
                             </li>
 

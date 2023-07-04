@@ -29,7 +29,7 @@ const ContactMe = ({ profile }) => {
     }
 
     return (
-        <div className="px-10 bg-gray-100 py-16 md:py-20" id="contact">
+        <div className="px-10 py-16 md:py-20" id="contact">
             <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                 Here's a contact form
             </h2>

@@ -1,7 +1,5 @@
-import Script from "next/script";
-import Link from "next/link";
-
 import { createClient } from "next-sanity";
+import Script from "next/script";
 import imageUrlBuilder from "@sanity/image-url";
 
 import PageHead from "@/components/PageHead";
@@ -13,6 +11,7 @@ import ToTop from "@/components/ToTop";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Portfolio from "@/components/Portfolio";
+import Certificates from "@/components/Certificates";
 
 export default function Home({ profile }) {
     const client = createClient({
@@ -48,8 +47,11 @@ export default function Home({ profile }) {
 
                 <Experience experience={profile.experience} />
 
+                <Certificates certificates={profile.certificates}/>
+
                 <ContactMe profile={profile} />
             </div>
+            
             <ToTop />
             <Footer profile={profile} />
         </>
@@ -60,6 +62,7 @@ export async function getServerSideProps(context) {
     const client = createClient({
         projectId: process.env.NEXT_PUBLIC_projectId,
         dataset: process.env.NEXT_PUBLIC_dataset,
+        apiVersion: process.env.NEXT_PUBLIC_apiDate,
         useCdn: false,
     });
 

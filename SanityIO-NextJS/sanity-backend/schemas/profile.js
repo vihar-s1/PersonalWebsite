@@ -167,6 +167,33 @@ export default {
                     ],
                 }
             ]
+        },
+        {
+            name: "certificates",
+            title: "Certificates",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            title: "Title",
+                            name: "title",
+                            type: "string"
+                        },
+                        {
+                            title: "Brief",
+                            name: "brief",
+                            type: "string"
+                        },
+                        {
+                            title: "Certificate",
+                            name: "certificate",
+                            type: "file"
+                        },
+                    ]
+                }
+            ]
         }
     ]
 }

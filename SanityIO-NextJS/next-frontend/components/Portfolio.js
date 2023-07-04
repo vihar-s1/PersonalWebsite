@@ -27,7 +27,7 @@ const Portfolio = ({ projects, urlFor }) => {
         {projects.length > 0 && 
             <div className="buttons text-center mt-20">
                 <Link
-                    className="rounded shadow-md shadow-purple-600 bg-primary px-8 py-3 font-header text-2xl font-bold uppercase text-white transition-colors hover:bg-grey-20"
+                    className="rounded shadow-md shadow-purple-600 bg-primary px-3 py-3 font-header text-sm sm:text-2xl font-bold uppercase text-white transition-colors hover:bg-grey-20"
                     href="/projects"
                 >
                     Check All Projects
