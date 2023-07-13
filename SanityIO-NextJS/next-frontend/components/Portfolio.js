@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard';
 
 const Portfolio = ({ projects, urlFor }) => {
   return (
-    <div className="bg-gray-100 p-16 md:py-20" id="portfolio">
+    <div className="bg-gray-100 p-3 sm:p-16 md:py-20" id="portfolio">
         <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
             Check out my Portfolio
         </h2>
@@ -13,7 +13,7 @@ const Portfolio = ({ projects, urlFor }) => {
             Here's what I have done with the past
         </h3>
 
-        <div className="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
+        <div className="mx-auto grid w-full gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2 2xl:grid-cols-3">
             { (projects == undefined || projects.length == 0) && "No Projects Yet!!" }
             { 
                 projects != undefined &&  projects.length > 0 && projects.slice(0, 4).map((project, index) => {

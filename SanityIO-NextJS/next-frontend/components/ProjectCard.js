@@ -10,7 +10,7 @@ const ProjectCard = ({ project, urlFor }) => {
                 style={{ backgroundImage: `url(${urlFor(project.image)})` }}
                 className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
             >
-                <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
+                <span className="absolute inset-0 bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
                 {project.projectLink != undefined && <Link
                     href={project.projectLink}
                     target="_blank"

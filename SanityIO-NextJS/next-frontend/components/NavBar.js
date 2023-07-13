@@ -14,6 +14,7 @@ const NavBar = ({ profile }) => {
     return (
         <>
             <div className="bg-[#493798] fixed z-70 w-full">
+                {/* Large Screen Navbar Begins Here */}
                 <div className="w-full z-50 top-0 py-3 sm:py-5  bg-primary">
                     <div className="container flex items-center justify-around">
                         <div>
@@ -68,7 +69,9 @@ const NavBar = ({ profile }) => {
                         </div>
                     </div>
                 </div>
+                {/* Large Screen Navbar Ends Here */}
 
+                {/* Mobile Screen Navbar Begins Here */}
                 <div className={mobileViewClass}>
                     <div className="fixed z-70 top-0 right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow-2xl md:w-1/3">
                         <button onClick={disableMobileView} className="absolute top-0 right-0 mt-4 mr-4">
@@ -118,6 +121,7 @@ const NavBar = ({ profile }) => {
                         </ul>
                     </div>
                 </div>
+                {/* Mobile Screen Navbar Ends Here */}
             </div>
         </>
     );

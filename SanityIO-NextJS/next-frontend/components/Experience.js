@@ -6,7 +6,7 @@ const WorkCard = ({ work }) => {
             <div className="md:w-2/5">
                 <div className="flex justify-center md:justify-start">
                     <span className="shrink-0">
-                        <div className="block pt-2 font-header text-2xl font-bold text-primary md:text-4xl">{work.organization}</div>
+                        <div className="block pt-2 text-2xl w-max font-bold text-primary md:text-3xl md:w-min lg:text-4xl ">{work.position}</div>
                     </span>
                     <div className="relative ml-3 hidden w-full md:block">
                         <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
@@ -18,13 +18,13 @@ const WorkCard = ({ work }) => {
                     <span className="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
 
                     <div className="mt-1 flex">
-                        <i className="bx bxs-right-arrow hidden text-primary md:block"></i>
+                        <i className="bx bxs-right-arrow hidden text-primary text-p md:block"></i>
                         <div className="md:-mt-1 md:pl-8">
+                            <span className="block pt-2 font-header text-sm md:text-xl font-bold uppercase text-primary">
+                                {work.organization}
+                            </span>
                             <span className="block font-body font-bold text-grey-40">
                                 {new Date(work.startDate).toDateString()} - {new Date(work.endDate).toDateString()}
-                            </span>
-                            <span className="block pt-2 font-header text-xl font-bold uppercase text-primary">
-                                {work.position}
                             </span>
                             <div className="pt-2">
                                 <span className="block font-body text-black">
